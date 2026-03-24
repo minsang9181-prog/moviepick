@@ -1,14 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineSuggest</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <h1>CineSuggest</h1>
+    </header>
+    <nav id="genre-nav">
+        <button class="genre-btn active" data-genre="all">All</button>
+        <button class="genre-btn" data-genre="action">Action</button>
+        <button class="genre-btn" data-genre="comedy">Comedy</button>
+        <button class="genre-btn" data-genre="horror">Horror</button>
+        <button class="genre-btn" data-genre="romance">Romance</button>
+    </nav>
+    <main id="movie-grid">
+        <!-- Movie items will be injected here by JavaScript -->
+    </main>
+    <footer>
+        <p>&copy; 2023 CineSuggest</p>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>
