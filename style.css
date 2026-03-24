@@ -1,24 +1,45 @@
+:root {
+    --bg-color: #121212;
+    --header-bg: #1a1a1a;
+    --text-color: #ffffff;
+    --accent-color: #ff4500;
+    --card-bg: #1a1a1a;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --secondary-text: #cccccc;
+}
+
+body.light-mode {
+    --bg-color: #f4f4f4;
+    --header-bg: #ffffff;
+    --text-color: #333333;
+    --accent-color: #d32f2f;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --secondary-text: #666666;
+}
+
 /* General Body Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Header Styles */
 header {
-    background-color: #1a1a1a;
+    background-color: var(--header-bg);
     padding: 20px 0;
     text-align: center;
-    border-bottom: 2px solid #ff4500;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 header h1 {
     font-family: 'Anton', sans-serif;
     font-size: 3em;
-    color: #ff4500;
+    color: var(--accent-color);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
@@ -28,14 +49,14 @@ header h1 {
 #genre-nav {
     text-align: center;
     padding: 20px 0;
-    background-color: #1a1a1a;
+    background-color: var(--header-bg);
 }
 
 .genre-btn {
     font-family: 'Roboto', sans-serif;
     background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ff4500;
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
     padding: 10px 20px;
     margin: 0 10px;
     cursor: pointer;
@@ -44,8 +65,8 @@ header h1 {
 }
 
 .genre-btn:hover, .genre-btn.active {
-    background-color: #ff4500;
-    color: #121212;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
 }
 
 /* Movie Grid Styles */
@@ -58,16 +79,16 @@ header h1 {
 
 /* Movie Card Styles */
 .movie-card {
-    background-color: #1a1a1a;
+    background-color: var(--card-bg);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 .movie-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 16px var(--card-shadow);
 }
 
 .movie-card img {
@@ -82,13 +103,13 @@ header h1 {
 .movie-card-content h3 {
     font-family: 'Anton', sans-serif;
     font-size: 1.5em;
-    color: #ff4500;
+    color: var(--accent-color);
     margin: 0 0 10px 0;
 }
 
 .movie-card-content p {
     font-size: 1em;
-    color: #cccccc;
+    color: var(--secondary-text);
     margin: 0;
 }
 
@@ -96,12 +117,26 @@ header h1 {
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color: #1a1a1a;
-    border-top: 2px solid #ff4500;
+    background-color: var(--header-bg);
+    border-top: 2px solid var(--accent-color);
     margin-top: 20px;
 }
 
 footer p {
     margin: 0;
     font-size: 0.9em;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    font-size: 1.2em;
+    z-index: 1000;
 }
